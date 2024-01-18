@@ -1,18 +1,3 @@
-WITH temp_daily AS (
-    SELECT *
-    FROM {{ref('prep_temp')}}
-),
-monthly_avg_temp AS (
-    SELECT
-        EXTRACT(MONTH FROM date) AS month,
-        AVG(avgtemp_c) AS avg_monthly_temp
-    FROM temp_daily
-    GROUP BY month
-)
-SELECT *
-FROM monthly_avg_temp;
-
-
 WITH total_avg_month AS(
     SELECT 
     city, country, year, lat, lon,
