@@ -13,7 +13,7 @@ SELECT *
 FROM monthly_avg_temp;
 
 
-WITH total_avg AS(
+WITH total_avg_month AS(
     SELECT 
     city, country, year, lat, lon,
     AVG(avgtemp_c) AS avg_temp_month,
@@ -22,4 +22,4 @@ WITH total_avg AS(
     FROM {{ref("prep_temp")}}
     GROUP BY city, country, year, month, lat, lon
 )
-SELECT * FROM total_avg
+SELECT * FROM total_avg_month
