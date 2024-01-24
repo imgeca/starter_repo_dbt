@@ -7,4 +7,4 @@ WITH total_avg_week AS(
     FROM {{ref("prep_temp")}}
     GROUP BY city, country, year, week, lat, lon
 )
-SELECT * FROM total_avg_week;
+SELECT * FROM total_avg_week
