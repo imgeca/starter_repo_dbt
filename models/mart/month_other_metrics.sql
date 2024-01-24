@@ -21,5 +21,5 @@ WITH total_avg_month AS (
     FROM {{ ref("prep_temp") }}
     GROUP BY city, region, country, year, month, lat, lon
 )
-SELECT * FROM total_avg_month;
+SELECT * FROM total_avg_month
 
