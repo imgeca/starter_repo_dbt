@@ -5,6 +5,8 @@ WITH total_avg_month AS (
         country,
         lat,
         lon,
+        year,             -- Add year
+        month,            -- Add month
         AVG(avgtemp_c) AS avg_temp_month,
         MAX(maxtemp_c) AS max_temp_month,
         MIN(mintemp_c) AS min_temp_month,
@@ -19,4 +21,5 @@ WITH total_avg_month AS (
     FROM {{ ref("prep_temp") }}
     GROUP BY city, region, country, year, month, lat, lon
 )
-SELECT * FROM total_avg_month
+SELECT * FROM total_avg_month;
+
