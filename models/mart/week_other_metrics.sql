@@ -18,6 +18,6 @@ WITH total_avg_week AS (
         AVG(CASE WHEN will_it_rain = 1 THEN 1 ELSE 0 END) AS avg_rain_probability,
         AVG(chance_of_rain) AS avg_chance_of_rain
     FROM {{ ref("prep_temp") }}
-    GROUP BY city, region, country, lat, lon, DATE_TRUNC('week', date_field)
+    GROUP BY city, region, country, lat, lon, DATE_TRUNC('week', date)
 )
 SELECT * FROM total_avg_week
