@@ -5,8 +5,6 @@ WITH total_avg_month AS (
         country,
         lat,
         lon,
-        EXTRACT(YEAR FROM date) AS year,
-        EXTRACT(MONTH FROM date) AS month,
         AVG(avgtemp_c) AS avg_temp_month,
         MAX(maxtemp_c) AS max_temp_month,
         MIN(mintemp_c) AS min_temp_month,
