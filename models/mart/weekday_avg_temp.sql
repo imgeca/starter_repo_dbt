@@ -1,4 +1,4 @@
-WITH total_avg AS(
+WITH total_avg_week AS(
     SELECT 
     city, country, year, lat, lon,
     AVG(avgtemp_c) AS avg_temp_week,
@@ -7,4 +7,4 @@ WITH total_avg AS(
     FROM {{ref("prep_temp")}}
     GROUP BY city, country, year, week, lat, lon
 )
-SELECT * FROM total_avg
+SELECT * FROM total_avg_week
